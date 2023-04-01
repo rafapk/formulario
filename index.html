@@ -139,46 +139,105 @@
 			
 			<div class="form-check form-check-inline">	
 			
-				<input class="form-check-input" type="radio" id="r1" name="pg1" value="feminino" required>
+				<input class="form-check-input" type="radio" id="r1" name="pg1" value="1" required>
 				<label class="form-check-label for="r1">1</label>
 			</div>
 
 			<div class="form-check form-check-inline">
 
-				<input class="form-check-input" type="radio" id="r2" name="pg1" value="masculino" required>
+				<input class="form-check-input" type="radio" id="r2" name="pg1" value="2" required>
 				<label class="form-check-label for="r2">2</label>
 
 			</div>
 
 			<div class="form-check form-check-inline">
 				
-				<input class="form-check-input" type="radio" id="r3" name="pg1" value="feminino" required>
+				<input class="form-check-input" type="radio" id="r3" name="pg1" value="3" required>
 				<label class="form-check-label for="r3">3</label>
 			
 			</div>
 
 			<div class="form-check form-check-inline">
 				
-				<input class="form-check-input" type="radio" id="r4" name="pg1" value="masculino" required>
+				<input class="form-check-input" type="radio" id="r4" name="pg1" value="4" required>
 				<label class="form-check-label for="r4">4</label>
 			
 			</div>
 			
 			<div class="form-check form-check-inline">
 			
-				<input class="form-check-input" type="radio" id="r5" name="pg1" value="feminino" required>
+				<input class="form-check-input" type="radio" id="r5" name="pg1" value="5" required>
 				<label class="form-check-label for="r5">5</label>
 			
 			</div>
 			
 			<div class="form-check form-check-inline">
 				
-				<input class="form-check-input" type="radio" id="r6" name="pg1" value="masculino" required>
+				<input class="form-check-input" type="radio" id="r6" name="pg1" value="6" required>
 				<label class="form-check-label for="r6">6</label>
 			
 			</div>
 
 		</div>
+
+
+
+
+
+
+        <div class="div_geral">
+
+
+                <label for="pg2">2- Costumo apegar-me demasiado às pessoas que me são mais próximas porque tenho medo que elas me abandonem:</label>
+            
+            <div class="form-check form-check-inline">	
+            
+                <input class="form-check-input" type="radio" id="r1" name="pg2" value="1" required>
+                <label class="form-check-label for="r1">1</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+
+                <input class="form-check-input" type="radio" id="r2" name="pg2" value="2" required>
+                <label class="form-check-label for="r2">2</label>
+
+            </div>
+
+            <div class="form-check form-check-inline">
+                
+                <input class="form-check-input" type="radio" id="r3" name="pg2" value="3" required>
+                <label class="form-check-label for="r3">3</label>
+            
+            </div>
+
+            <div class="form-check form-check-inline">
+                
+                <input class="form-check-input" type="radio" id="r4" name="pg2" value="4" required>
+                <label class="form-check-label for="r4">4</label>
+            
+            </div>
+            
+            <div class="form-check form-check-inline">
+            
+                <input class="form-check-input" type="radio" id="r5" name="pg2" value="5" required>
+                <label class="form-check-label for="r5">5</label>
+            
+            </div>
+            
+            <div class="form-check form-check-inline">
+                
+                <input class="form-check-input" type="radio" id="r6" name="pg2" value="6" required>
+                <label class="form-check-label for="r6">6</label>
+            
+            </div>
+
+        </div>
+
+
+
+
+
+
 
 
 
@@ -215,74 +274,7 @@
   
     <script src="validacoes_campos_javascript.js"></script>
 
-   <!--
-    <script>
-        $('#cep').mask('00000-000');
-        $('#phone').mask('(00) 00000-0000');
-        $('#cpf').mask('000.000.000-00', { reverse: true });
-        $('#money').mask("#.##0,00", { reverse: true });
-    </script>
 
- 
-   <script>
-            // Obtenha o elemento de entrada de data
-        var campoData = document.getElementById("data");
-
-        // Crie um novo objeto de data com a data atual
-        var dataAtual = new Date();
-
-        // Formate a data no formato necessário para o campo de data
-        var formatoData = dataAtual.getFullYear() + "-" + (dataAtual.getMonth() + 1).toString().padStart(2, "0") + "-" + dataAtual.getDate().toString().padStart(2, "0");
-
-        // Defina o valor do campo de data como a data atual formatada
-        campoData.value = formatoData;
-
-        // Definir o valor do atributo disabled como verdadeiro
-        campoData.disabled = true;
-
-   </script>
-
-
-    <script>
-        
-    // Obtenha o elemento de entrada de idade
-    var campoIdade = document.getElementById("idade");
-
-
-    // Definir o valor do atributo disabled como verdadeiro
-    campoIdade.disabled = true;
-
-    </script>
-
-
-
-        <script>
-            function calcularIdade() {
-        var dataNasc = new Date(document.getElementById("datanasc").value);
-        var hoje = new Date();
-        var idade = hoje.getFullYear() - dataNasc.getFullYear();
-        var mes = hoje.getMonth() - dataNasc.getMonth();
-        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNasc.getDate())) {
-            idade--;
-        }
-        document.getElementById("idade").value = idade;
-        }
-        </script>
-
-
-
- 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
-
-  <script>
-    $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-  </script>
-
---> 
       
 
 
