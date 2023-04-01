@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <title>Motor ETL</title>
+	
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+
+
+
+	<style>
+		form {
+			max-width: auto;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #f2f2f2;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: right;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="radio"], input[type="checkbox"] {
+			margin-right: 10px;
+		}
+
+
+
+		.div_geral{
+
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #ffffff;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			font-family: Arial, sans-serif;
+			margin-bottom: 20px;
+
+		}
+
+		.div_enviar{
+
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0);
+			border-radius: 10px; 
+			font-family: Arial, sans-serif;
+			margin-bottom: 20px;
+		}
+
+	</style>
+
+
+</head>
+
+
+
+
+<body>
+
+
+	<form action="processa_respostas.py" method="post" >
+			<h1>Meu Formulario</h1>
+
+		<div class="div_geral">
+		
+			<label for="data">Data:</label>
+			<input type="date" id="data" name="data" required disabled>
+		
+		</div>
+
+		<div class="div_geral">
+
+
+            <label for="cpf">CPF - (Apenas Números):</label>
+			<input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" data-toggle="tooltip" title="Insira seu cpf" required oninvalid="this.setCustomValidity('O campo cpf não está preenchido, por favor preencha.')" oninput="setCustomValidity('')">
+
+		</div>
+		
+		
+			
+
+		<div class="div_geral">
+		
+			<label for="nome">Nome:</label>
+			<input type="text" id="nome" name="nome" placeholder="Digite seu nome" data-toggle="tooltip" title="Insira seu nome completo" required oninvalid="this.setCustomValidity('O campo nome não está preenchido, por favor preencha.')" oninput="setCustomValidity('')">
+		
+		</div>
+			
+		<div class="div_geral">
+		
+			<label for="datanasc">Data de Nascimento:</label>
+			<input type="date" id="datanasc" name="datanasc"  min="1900-01-01" max="2018-12-31"  required placeholder="Digite sua data de nascimento" data-toggle="tooltip" title="Insira sua data de nascimento"  oninvalid="this.setCustomValidity('O campo data de nascimento não está preenchido, por favor preencha.')" oninput="setCustomValidity('')" onchange="calcularIdade()">
+
+		</div>
+				
+		<div class="div_geral">
+		
+			<label for="idade">Idade:</label>
+			<input type="number" id="idade" name="idade" min="1" max="150" required>
+		
+		</div>
+
+		
+
+		<div class="div_geral">
+			<label for="genero">Gênero:</label>
+			<div class="form-check form-check-inline">
+
+				<input class="form-check-input" type="radio" id="genero_feminino" name="genero" value="feminino" required>
+				<label class="form-check-label" for="genero_feminino">Feminino</label>
+			
+			</div>
+			
+			<div class="form-check form-check-inline">
+			
+				<input class="form-check-input" type="radio" id="genero_masculino" name="genero" value="masculino" required>
+				<label class="form-check-label" for="genero_masculino">Masculino</label>
+			</div>
+
+				<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" id="genero_outro" name="genero" value="outro" required>
+				<label class="form-check-label"  for="genero_masculino">Outro</label>
+			
+			</div>	
+		</div>
+
+
+
+		<div class="div_geral">
+
+
+
+				<label for="estado_civil">Estado civil:</label>
+
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" id="estado_civil_solteiro" name="estado_civil" value="solteiro" required>
+				<label class="form-check-label" for="estado_civil_solteiro">Solteiro</label>
+			</div>
+
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" id="estado_civil_casado" name="estado_civil" value="casado" required>
+				<label class="form-check-label" for="estado_civil_casado">casado</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" id="estado_civil_divorciado" name="estado_civil" value="divorciado" required>
+				<label class="form-check-label" for="estado_civil_divorciado">Divorciado</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" id="estado_civil_viuvo" name="estado_civil" value="viuvo" required>
+				<label class="form-check-label" for="estado_civil_viuvo">Viuvo</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" id="estado_civil_separado" name="estado_civil" value="separado" required>
+				<label class="form-check-label" for="estado_civil_separado">Separado</label>
+			</div>
+			
+			
+			
+			
+		</div>
+
+		
+		
+		<div class="div_geral">
+
+
+				<label for="pg1">1- Não tenho tido ninguém que cuide de mim, que partilhe comigo a sua vida ou que se preocupe realmente com tudo o que me aconte:</label>
+			
+			<div class="form-check form-check-inline">	
+			
+				<input class="form-check-input" type="radio" id="r1" name="pg1" value="feminino" required>
+				<label class="form-check-label for="r1">1</label>
+			</div>
+
+			<div class="form-check form-check-inline">
+
+				<input class="form-check-input" type="radio" id="r2" name="pg1" value="masculino" required>
+				<label class="form-check-label for="r2">2</label>
+
+			</div>
+
+			<div class="form-check form-check-inline">
+				
+				<input class="form-check-input" type="radio" id="r3" name="pg1" value="feminino" required>
+				<label class="form-check-label for="r3">3</label>
+			
+			</div>
+
+			<div class="form-check form-check-inline">
+				
+				<input class="form-check-input" type="radio" id="r4" name="pg1" value="masculino" required>
+				<label class="form-check-label for="r4">4</label>
+			
+			</div>
+			
+			<div class="form-check form-check-inline">
+			
+				<input class="form-check-input" type="radio" id="r5" name="pg1" value="feminino" required>
+				<label class="form-check-label for="r5">5</label>
+			
+			</div>
+			
+			<div class="form-check form-check-inline">
+				
+				<input class="form-check-input" type="radio" id="r6" name="pg1" value="masculino" required>
+				<label class="form-check-label for="r6">6</label>
+			
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+		<label for="interesse">Interesse:</label>
+		<input type="checkbox" id="interesse_esportes" name="interesse[]" value="esportes">
+		<label for="interesse_esportes">Esportes</label>
+		<input type="checkbox" id="interesse_cinema" name="interesse[]" value="cinema">
+		<label for="interesse_cinema">Cinema</label>
+		<input type="checkbox" id="interesse_literatura" name="interesse[]" value="literatura">
+		<label for="interesse_literatura">Literatura</label>
+
+-->
+
+
+	<div class="div_enviar">
+
+		<button type="submit" class="btn btn-primary" value="Enviar">Enviar</button>
+	
+		
+	
+	</div>
+
+
+	</form>
+  
+    <script>
+        $('#cep').mask('00000-000');
+        $('#phone').mask('(00) 00000-0000');
+        $('#cpf').mask('000.000.000-00', { reverse: true });
+        $('#money').mask("#.##0,00", { reverse: true });
+    </script>
+
+ 
+   <script>
+            // Obtenha o elemento de entrada de data
+        var campoData = document.getElementById("data");
+
+        // Crie um novo objeto de data com a data atual
+        var dataAtual = new Date();
+
+        // Formate a data no formato necessário para o campo de data
+        var formatoData = dataAtual.getFullYear() + "-" + (dataAtual.getMonth() + 1).toString().padStart(2, "0") + "-" + dataAtual.getDate().toString().padStart(2, "0");
+
+        // Defina o valor do campo de data como a data atual formatada
+        campoData.value = formatoData;
+
+        // Definir o valor do atributo disabled como verdadeiro
+        campoData.disabled = true;
+
+   </script>
+
+
+    <script>
+        
+    // Obtenha o elemento de entrada de idade
+    var campoIdade = document.getElementById("idade");
+
+
+    // Definir o valor do atributo disabled como verdadeiro
+    campoIdade.disabled = true;
+
+    </script>
+
+
+
+        <script>
+            function calcularIdade() {
+        var dataNasc = new Date(document.getElementById("datanasc").value);
+        var hoje = new Date();
+        var idade = hoje.getFullYear() - dataNasc.getFullYear();
+        var mes = hoje.getMonth() - dataNasc.getMonth();
+        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNasc.getDate())) {
+            idade--;
+        }
+        document.getElementById("idade").value = idade;
+        }
+        </script>
+
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+
+      
+
+
+</body>
+
+</html>
