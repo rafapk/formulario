@@ -9,6 +9,17 @@
     $('#money').mask("#.##0,00", { reverse: true });
 
 
+// detectando se 'e iphone e modificando o tipo de campo data
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (isIOS) {
+      // se o usuário estiver usando um dispositivo iOS, exiba um campo de entrada de texto para a data
+      document.write('<input type="text" id="datanasc" name="datanasc" required placeholder="DD/MM/AAAA" data-toggle="tooltip" title="Insira sua data de nascimento" oninvalid="this.setCustomValidity(\'O campo data de nascimento não está preenchido, por favor preencha.\')" oninput="setCustomValidity(\'\')" onchange="calcularIdade()">');
+    } else {
+      // se o usuário não estiver usando um dispositivo iOS, exiba o elemento de entrada de data HTML5
+      document.write('<input type="date" id="datanasc" name="datanasc" min="1900-01-01" max="2018-12-31" required placeholder="Digite sua data de nascimento" data-toggle="tooltip" title="Insira sua data de nascimento" oninvalid="this.setCustomValidity(\'O campo data de nascimento não está preenchido, por favor preencha.\')" oninput="setCustomValidity(\'\')" onchange="calcularIdade()">');
+    }
+
+
 
     // Obtenha o elemento de entrada de data
     var campoData = document.getElementById("data");

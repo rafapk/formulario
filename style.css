@@ -12,6 +12,12 @@
         text-align: center;
         margin-top: 0;
     }
+
+    .titulo{
+
+        font-weight: bold;
+
+    }
     input[type="submit"] {
         background-color: #4CAF50;
         color: white;

@@ -34,7 +34,7 @@
 
 		<div class="div_geral">
 		
-			<label for="data">Data:</label>
+			<label for="data" class="titulo">Data:</label>
 			<input type="date" id="data" name="data" required disabled>
 		
 		</div>
@@ -42,7 +42,7 @@
 		<div class="div_geral">
 
 
-            <label for="cpf">CPF - (Apenas Números):</label>
+            <label for="cpf" class="titulo">CPF - (Apenas Números):</label>
 			<input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" data-toggle="tooltip" title="Insira seu cpf" required oninvalid="this.setCustomValidity('O campo cpf não está preenchido, por favor preencha.')" oninput="setCustomValidity('')">
 
 		</div>
@@ -52,21 +52,21 @@
 
 		<div class="div_geral">
 		
-			<label for="nome">Nome:</label>
+			<label for="nome" class="titulo">Nome:</label>
 			<input type="text" id="nome" name="nome" placeholder="Digite seu nome" data-toggle="tooltip" title="Insira seu nome completo" required oninvalid="this.setCustomValidity('O campo nome não está preenchido, por favor preencha.')" oninput="setCustomValidity('')">
 		
 		</div>
 			
 		<div class="div_geral">
 		
-			<label for="datanasc">Data de Nascimento:</label>
+			<label for="datanasc" class="titulo">Data de Nascimento:</label>
 			<input type="date" id="datanasc" name="datanasc"  min="1900-01-01" max="2018-12-31"  required placeholder="Digite sua data de nascimento" data-toggle="tooltip" title="Insira sua data de nascimento"  oninvalid="this.setCustomValidity('O campo data de nascimento não está preenchido, por favor preencha.')" oninput="setCustomValidity('')" onchange="calcularIdade()">
 
 		</div>
 				
 		<div class="div_geral">
 		
-			<label for="idade">Idade:</label>
+			<label for="idade" class="titulo">Idade:</label>
 			<input type="number" id="idade" name="idade" min="1" max="150" required>
 		
 		</div>
@@ -74,7 +74,7 @@
 		
 
 		<div class="div_geral">
-			<label for="genero">Gênero:</label>
+			<label for="genero" class="titulo">Gênero:</label>
 			<div class="form-check form-check-inline">
 
 				<input class="form-check-input" type="radio" id="genero_feminino" name="genero" value="feminino" required>
@@ -101,7 +101,7 @@
 
 
 
-				<label for="estado_civil">Estado civil:</label>
+				<label for="estado_civil" class="titulo">Estado civil:</label>
 
 			<div class="form-check form-check-inline">
 				<input class="form-check-input" type="radio" id="estado_civil_solteiro" name="estado_civil" value="solteiro" required>
@@ -135,7 +135,7 @@
 		<div class="div_geral">
 
 
-				<label for="pg1">1- Não tenho tido ninguém que cuide de mim, que partilhe comigo a sua vida ou que se preocupe realmente com tudo o que me aconte:</label>
+				<label for="pg1" class="titulo">1- Não tenho tido ninguém que cuide de mim, que partilhe comigo a sua vida ou que se preocupe realmente com tudo o que me acontece:</label>
 			
 			<div class="form-check form-check-inline">	
 			
@@ -180,6 +180,8 @@
 
 		</div>
 
+        
+
 
 
 
@@ -188,7 +190,7 @@
         <div class="div_geral">
 
 
-                <label for="pg2">2- Costumo apegar-me demasiado às pessoas que me são mais próximas porque tenho medo que elas me abandonem:</label>
+                <label for="pg2" class="titulo">2- Costumo apegar-me demasiado às pessoas que me são mais próximas porque tenho medo que elas me abandonem:</label>
             
             <div class="form-check form-check-inline">	
             
@@ -232,6 +234,457 @@
             </div>
 
         </div>
+
+
+
+
+        <div class="div_geral">
+
+
+            <label for="pg3" class="titulo">3- Sinto que as pessoas se vão aproveitar de mim:</label>
+        
+        <div class="form-check form-check-inline">	
+        
+            <input class="form-check-input" type="radio" id="r1" name="pg3" value="1" required>
+            <label class="form-check-label for="r1">1</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+
+            <input class="form-check-input" type="radio" id="r2" name="pg3" value="2" required>
+            <label class="form-check-label for="r2">2</label>
+
+        </div>
+
+        <div class="form-check form-check-inline">
+            
+            <input class="form-check-input" type="radio" id="r3" name="pg3" value="3" required>
+            <label class="form-check-label for="r3">3</label>
+        
+        </div>
+
+        <div class="form-check form-check-inline">
+            
+            <input class="form-check-input" type="radio" id="r4" name="pg3" value="4" required>
+            <label class="form-check-label for="r4">4</label>
+        
+        </div>
+        
+        <div class="form-check form-check-inline">
+        
+            <input class="form-check-input" type="radio" id="r5" name="pg3" value="5" required>
+            <label class="form-check-label for="r5">5</label>
+        
+        </div>
+        
+        <div class="form-check form-check-inline">
+            
+            <input class="form-check-input" type="radio" id="r6" name="pg3" value="6" required>
+            <label class="form-check-label for="r6">6</label>
+        
+        </div>
+
+    </div>
+
+
+    <div class="div_geral">
+
+
+        <label for="pg4" class="titulo">4- Sou um(a) desajustado(a):</label>
+    
+    <div class="form-check form-check-inline">	
+    
+        <input class="form-check-input" type="radio" id="r1" name="pg4" value="1" required>
+        <label class="form-check-label for="r1">1</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+
+        <input class="form-check-input" type="radio" id="r2" name="pg4" value="2" required>
+        <label class="form-check-label for="r2">2</label>
+
+    </div>
+
+    <div class="form-check form-check-inline">
+        
+        <input class="form-check-input" type="radio" id="r3" name="pg4" value="3" required>
+        <label class="form-check-label for="r3">3</label>
+    
+    </div>
+
+    <div class="form-check form-check-inline">
+        
+        <input class="form-check-input" type="radio" id="r4" name="pg4" value="4" required>
+        <label class="form-check-label for="r4">4</label>
+    
+    </div>
+    
+    <div class="form-check form-check-inline">
+    
+        <input class="form-check-input" type="radio" id="r5" name="pg4" value="5" required>
+        <label class="form-check-label for="r5">5</label>
+    
+    </div>
+    
+    <div class="form-check form-check-inline">
+        
+        <input class="form-check-input" type="radio" id="r6" name="pg4" value="6" required>
+        <label class="form-check-label for="r6">6</label>
+    
+    </div>
+
+</div>
+
+
+<div class="div_geral">
+
+
+    <label for="pg5" class="titulo">5- Nenhum homem/mulher de quem eu goste pode gostar de mim depois de conhecer os meus defeitos ou fraquezas:</label>
+
+<div class="form-check form-check-inline">	
+
+    <input class="form-check-input" type="radio" id="r1" name="pg5" value="1" required>
+    <label class="form-check-label for="r1">1</label>
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r2" name="pg5" value="2" required>
+    <label class="form-check-label for="r2">2</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r3" name="pg5" value="3" required>
+    <label class="form-check-label for="r3">3</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r4" name="pg5" value="4" required>
+    <label class="form-check-label for="r4">4</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r5" name="pg5" value="5" required>
+    <label class="form-check-label for="r5">5</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r6" name="pg5" value="6" required>
+    <label class="form-check-label for="r6">6</label>
+
+</div>
+
+</div>
+
+
+<div class="div_geral">
+
+
+    <label for="pg6" class="titulo">6- Quase nada do que faço no trabalho (ou na escola) é tão bom como o que os outros são capazes de fazer:</label>
+
+<div class="form-check form-check-inline">	
+
+    <input class="form-check-input" type="radio" id="r1" name="pg6" value="1" required>
+    <label class="form-check-label for="r1">1</label>
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r2" name="pg6" value="2" required>
+    <label class="form-check-label for="r2">2</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r3" name="pg6" value="3" required>
+    <label class="form-check-label for="r3">3</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r4" name="pg6" value="4" required>
+    <label class="form-check-label for="r4">4</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r5" name="pg6" value="5" required>
+    <label class="form-check-label for="r5">5</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r6" name="pg6" value="6" required>
+    <label class="form-check-label for="r6">6</label>
+
+</div>
+
+</div>
+
+
+<div class="div_geral">
+
+
+    <label for="pg7" class="titulo">7- Não me sinto capaz de me desenvencilhar sozinho(a) no dia-a-dia:</label>
+
+<div class="form-check form-check-inline">	
+
+    <input class="form-check-input" type="radio" id="r1" name="pg7" value="1" required>
+    <label class="form-check-label for="r1">1</label>
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r2" name="pg7" value="2" required>
+    <label class="form-check-label for="r2">2</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r3" name="pg7" value="3" required>
+    <label class="form-check-label for="r3">3</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r4" name="pg7" value="4" required>
+    <label class="form-check-label for="r4">4</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r5" name="pg7" value="5" required>
+    <label class="form-check-label for="r5">5</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r6" name="pg7" value="6" required>
+    <label class="form-check-label for="r6">6</label>
+
+</div>
+
+</div>
+
+
+
+<div class="div_geral">
+
+
+    <label for="pg8" class="titulo">8- Não consigo deixar de sentir que alguma coisa de mal está para acontecer:</label>
+
+<div class="form-check form-check-inline">	
+
+    <input class="form-check-input" type="radio" id="r1" name="pg8" value="1" required>
+    <label class="form-check-label for="r1">1</label>
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r2" name="pg8" value="2" required>
+    <label class="form-check-label for="r2">2</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r3" name="pg8" value="3" required>
+    <label class="form-check-label for="r3">3</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r4" name="pg8" value="4" required>
+    <label class="form-check-label for="r4">4</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r5" name="pg8" value="5" required>
+    <label class="form-check-label for="r5">5</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r6" name="pg8" value="6" required>
+    <label class="form-check-label for="r6">6</label>
+
+</div>
+
+</div>
+
+
+
+<div class="div_geral">
+
+
+    <label for="pg9" class="titulo">9- Não tenho sido capaz de me separar dos meus pais, tal como fazem as outras pessoas da minha idade:</label>
+
+<div class="form-check form-check-inline">	
+
+    <input class="form-check-input" type="radio" id="r1" name="pg9" value="1" required>
+    <label class="form-check-label for="r1">1</label>
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r2" name="pg9" value="2" required>
+    <label class="form-check-label for="r2">2</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r3" name="pg9" value="3" required>
+    <label class="form-check-label for="r3">3</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r4" name="pg9" value="4" required>
+    <label class="form-check-label for="r4">4</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r5" name="pg9" value="5" required>
+    <label class="form-check-label for="r5">5</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r6" name="pg9" value="6" required>
+    <label class="form-check-label for="r6">6</label>
+
+</div>
+
+</div>
+
+
+<div class="div_geral">
+
+
+    <label for="pg10" class="titulo">10- Sinto que, se fizer o que quero, só vou arranjar problemas:</label>
+
+<div class="form-check form-check-inline">	
+
+    <input class="form-check-input" type="radio" id="r1" name="pg10" value="1" required>
+    <label class="form-check-label for="r1">1</label>
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r2" name="pg10" value="2" required>
+    <label class="form-check-label for="r2">2</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r3" name="pg10" value="3" required>
+    <label class="form-check-label for="r3">3</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r4" name="pg10" value="4" required>
+    <label class="form-check-label for="r4">4</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r5" name="pg10" value="5" required>
+    <label class="form-check-label for="r5">5</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r6" name="pg10" value="6" required>
+    <label class="form-check-label for="r6">6</label>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="div_geral">
+
+
+    <label for="pg11" class="titulo">11- Sou sempre eu que acabo por tomar conta das pessoas que me são mais chegadas:</label>
+
+<div class="form-check form-check-inline">	
+
+    <input class="form-check-input" type="radio" id="r1" name="pg11" value="1" required>
+    <label class="form-check-label for="r1">1</label>
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r2" name="pg11" value="2" required>
+    <label class="form-check-label for="r2">2</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r3" name="pg11" value="3" required>
+    <label class="form-check-label for="r3">3</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r4" name="pg11" value="4" required>
+    <label class="form-check-label for="r4">4</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+
+    <input class="form-check-input" type="radio" id="r5" name="pg11" value="5" required>
+    <label class="form-check-label for="r5">5</label>
+
+</div>
+
+<div class="form-check form-check-inline">
+    
+    <input class="form-check-input" type="radio" id="r6" name="pg11" value="6" required>
+    <label class="form-check-label for="r6">6</label>
+
+</div>
+
+</div>
+
+
+
 
 
 
